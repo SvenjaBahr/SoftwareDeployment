@@ -39,5 +39,8 @@ steps:
     azureSubscription: 'Azure für Bildungseinrichtungen(d941d23b-3009-46b5-a812-cc36726fd2b6)'
     appType: 'webApp'
     appName: 'helloworldbahrsvenja'
+    deployToSlotOrASE: true
+    resourceGroupName: lab2-ressource
+    slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/Lab2/HelloWorldApp'
     deploymentMethod: 'auto'

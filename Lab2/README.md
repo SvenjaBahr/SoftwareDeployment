@@ -32,3 +32,5 @@ Test fehlgeschlagen:
 
 ## Application Insights
 Deployment web app mit Application Insights: 
+
+ ![application insights](assets/application_insights.PNG)

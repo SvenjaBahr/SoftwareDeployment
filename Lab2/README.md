@@ -16,19 +16,33 @@ Test erfolgreich:
 
 Deployment fehlgeschlagen:
 
- ![deployment with fail](Pictures/deploy_with_fail.PNG)
+ ![deployment fail](assets/deployment_fail.PNG)
 
 Test fehlgeschlagen: 
 
- ![test with fail](Pictures/test_with_fail.PNG)
+ ![test fail](assets/test_fail.PNG)
 
 
 ## Azure DevOps Release Pipeline
 
+ ![release pipeline](assets/release_pipeline.PNG)
+
+  ![release pipeline](assets/release_pipeline2.PNG)
 
 
 ## Dokumentation Release: 
 
+Release erzeugen:
+
+ ![create release](assets/create_release.PNG)
+
+ Approve Release:
+
+  ![release approved](assets/approve_release.PNG)
+
+  Succeeded Release: 
+
+   ![release succeeded](assets/release_succeeded.PNG)
 
 ## Application Insights
 Deployment web app mit Application Insights: 

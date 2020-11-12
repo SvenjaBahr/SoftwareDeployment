@@ -41,6 +41,5 @@ steps:
     appName: 'helloworldbahrsvenja'
     deployToSlotOrASE: true
     resourceGroupName: lab2-ressource
-    slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/Lab2/HelloWorldApp'
     deploymentMethod: 'auto'

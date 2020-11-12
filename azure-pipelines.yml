@@ -21,3 +21,23 @@ steps:
     npm test
   workingDirectory: '$(Build.SourcesDirectory)/Lab2/HelloWorldApp'
   displayName: 'npm install and build'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)/Lab2/HelloWorldApp'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Lab2/HelloWorldApp'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure für Bildungseinrichtungen(d941d23b-3009-46b5-a812-cc36726fd2b6)'
+    appType: 'webApp'
+    appName: 'helloworldbahrsvenja'
+    package: '$(System.DefaultWorkingDirectory)/Lab2/HelloWorldApp'
+    deploymentMethod: 'auto'

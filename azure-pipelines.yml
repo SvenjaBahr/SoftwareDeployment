@@ -37,9 +37,10 @@ steps:
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure für Bildungseinrichtungen(d941d23b-3009-46b5-a812-cc36726fd2b6)'
-    appType: 'webApp'
+    appType: 'webAppLinux'
     appName: 'helloworldbahrsvenja'
     deployToSlotOrASE: true
     resourceGroupName: lab2-ressource
     package: '$(System.DefaultWorkingDirectory)/Lab2/HelloWorldApp'
     deploymentMethod: 'auto'
+    customWebConfig: '-Handler iisnode -NodeStartFile index.js -appType node'

@@ -28,13 +28,13 @@ Weiterhin erstellen wir ein secret:
 
 Als nächsten Schritt laden wir die beiden yaml-Dateien hinauf indem wir die Azure cloud console verwenden. Vorher müssen wir uns jedoch zu unserem cluster verbinden mit:
 
-`az account set --subscription [your subscription id]`
+`az account set --subscription {your subscription id}`
 
 `az aks get-credentials --resource-group lab4-bahr-svenja --name bahraks`
 
 Mit folgenden Befehl können wir dann die Dateien hochladen: 
 
-`kubectl apply -f [path of the file]`
+`kubectl apply -f {path of the file}`
 
 Schließlich erhalten wir die external IP von Wordpress mit dem Befehl:
 

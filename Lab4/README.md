@@ -6,36 +6,38 @@
 
 ### Deployment 
 
-At first: login to Azure
+Aus ersters in Azure einloggen: 
 
 `az login`
 
+Dannach erstellen wir einen Azure Kubernetes Service in der Resourcengruppe "lab4-bahr-svenja" mit den Namen "bahraks"
+
 `az aks create -g lab4-bahr-svenja -n bahraks --node-count 1`
 
-In the next step we are creating an AKS at azure portal in a special resource group. After that we are installing the Kubernetes command-line with: 
+Anschließend installieren wir die Kubernetes command-line mit: 
 
 `az aks install-cli.`
 
-Additionally, we get the credentials with: 
+Dannach führen wir folgenden Befehl aus: 
 
 `az aks get-credentials --resource-group lab4-bahr-svenja --name bahraks`
 
-Now we are creating a secret:
+Weiterhin erstellen wir ein secret:
 
 `kubectl create secret generic mysql-pass --from-literal=password=svenjapwd`
 
-In the next step, you have to upload the mysql.yaml and the wordpress.yaml file using the Azure cloud console. But at first, you need to connect to the recently created cluster.
+Als nächsten Schritt laden wir die beiden yaml-Dateien hinauf indem wir die Azure cloud console verwenden. Vorher müssen wir uns jedoch zu unserem cluster verbinden mit:
 
 `az account set --subscription [your subscription id]`
 
 `az aks get-credentials --resource-group lab4-bahr-svenja --name bahraks`
 
-Then with the following command, you are able to upload both files.
+Mit folgenden Befehl können wir dann die Dateien hochladen: 
 
 `kubectl apply -f [path of the file]`
 
-At last, we want the external IP of Wordpress:
+Schließlich erhalten wir die external IP von Wordpress mit dem Befehl:
 
 `kubectl get services wordpress`
 
- ![aks cluster](cluster.JPG)
+ ![aks cluster](cluster.PNG)
